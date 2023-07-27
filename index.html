@@ -193,12 +193,14 @@
         $('#start').click(function () {
             var protocol = $('#protocol').val();
             var streamName = $('#streamName').val();
+            //7/27++
+            var akey = "aaaaaaaaaaaaaaaaaaaaaa" + $('#accessKeyId').val();
 
             // Step 1: Configure SDK Clients
             var options = {
                 //accessKeyId: $('#accessKeyId').val(),
-                accessKeyId: "aaaaaaaaaaaaaaaaaaaaaaa",
-                //accessKeyId: "aaaaaaaaaaaaaaaaaaaaaa" + $('#accessKeyId').val(),
+                //accessKeyId: "aaaaaaaaaaaaaaaaaaaaaaa",
+                accessKeyId: akey,
                 //secretAccessKey: $('#secretAccessKey').val(),
                 secretAccessKey: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
                 sessionToken: $('#sessionToken').val() || undefined,
@@ -209,7 +211,7 @@
             var kinesisVideo = new AWS.KinesisVideo(options);
             var kinesisVideoArchivedContent = new AWS.KinesisVideoArchivedMedia(options);
             //7/27++2
-            var akey = "aaaaaaaaaaaaaaaaaaaaaa" + $('#accessKeyId').val()
+            //var akey = "aaaaaaaaaaaaaaaaaaaaaa" + $('#accessKeyId').val()
             console.log('Access key is: ' + akey);
 
             // Step 2: Get a data endpoint for the stream
